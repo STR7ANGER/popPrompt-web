@@ -12,8 +12,8 @@ import {
 
 export default function Home() {
   return (
-    <div className="flex-1 bg-background text-foreground">
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div className="relative flex-1 bg-background text-foreground">
+      <div className="pointer-events-none fixed inset-0 overflow-hidden">
         <div className="absolute -top-48 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute bottom-0 left-0 h-[380px] w-[380px] rounded-full bg-white/5 blur-3xl" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:44px_44px] opacity-20" />

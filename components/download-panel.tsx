@@ -3,12 +3,6 @@
 import * as React from "react";
 import { Download, GitFork } from "lucide-react";
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -70,55 +64,49 @@ function DownloadTab({ platform }: { platform: Platform }) {
         </Button>
       </div>
 
-      <Accordion type="single" collapsible defaultValue="">
-        <AccordionItem value="developer-note" className="border-border/60">
-          <AccordionTrigger className="text-sm">
-            Developer note
-          </AccordionTrigger>
-          <AccordionContent className="text-sm text-muted-foreground">
-            {isMac ? (
-              <div className="space-y-3">
-                <p>
-                  The macOS download is a{" "}
-                  <span className="text-foreground">DMG</span>.
-                </p>
-                <ol className="list-decimal space-y-1 pl-5">
-                  <li>Open the DMG.</li>
-                  <li>
-                    Drag{" "}
-                    <span className="text-foreground">PopPrompt.app</span> into
-                    Applications.
-                  </li>
-                  <li>
-                    Launch PopPrompt from Applications (it lives in the menu
-                    bar).
-                  </li>
-                </ol>
-                <p>
-                  If macOS blocks it: right click → Open, or go to System
-                  Settings → Privacy &amp; Security.
-                </p>
-              </div>
-            ) : (
-              <div className="space-y-3">
-                <p>
-                  The Windows download is an{" "}
-                  <span className="text-foreground">MSI</span> installer.
-                </p>
-                <ol className="list-decimal space-y-1 pl-5">
-                  <li>Run the MSI and finish setup.</li>
-                  <li>Launch PopPrompt (it lives in the system tray).</li>
-                </ol>
-                <p>
-                  If SmartScreen warns: click “More info” → “Run anyway” (only
-                  if you trust the source).
-                </p>
-                <p>Uninstall via Settings → Apps → Installed apps → PopPrompt.</p>
-              </div>
-            )}
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
+      <div className="rounded-lg border border-border/60 bg-background/30 p-4">
+        <div className="text-sm font-medium">Developer note</div>
+        <div className="mt-2 text-sm text-muted-foreground">
+          {isMac ? (
+            <div className="space-y-3">
+              <p>
+                The macOS download is a{" "}
+                <span className="text-foreground">DMG</span>.
+              </p>
+              <ol className="list-decimal space-y-1 pl-5">
+                <li>Open the DMG.</li>
+                <li>
+                  Drag <span className="text-foreground">PopPrompt.app</span>{" "}
+                  into Applications.
+                </li>
+                <li>
+                  Launch PopPrompt from Applications (it lives in the menu bar).
+                </li>
+              </ol>
+              <p>
+                If macOS blocks it: right click → Open, or go to System Settings
+                → Privacy &amp; Security.
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              <p>
+                The Windows download is an{" "}
+                <span className="text-foreground">MSI</span> installer.
+              </p>
+              <ol className="list-decimal space-y-1 pl-5">
+                <li>Run the MSI and finish setup.</li>
+                <li>Launch PopPrompt (it lives in the system tray).</li>
+              </ol>
+              <p>
+                If SmartScreen warns: click “More info” → “Run anyway” (only if
+                you trust the source).
+              </p>
+              <p>Uninstall via Settings → Apps → Installed apps → PopPrompt.</p>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
