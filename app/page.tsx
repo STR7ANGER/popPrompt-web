@@ -21,15 +21,10 @@ export default function Home() {
 
       <div className="relative mx-auto w-full max-w-5xl px-6 py-10 md:py-16">
         <header className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-foreground text-background font-semibold">
-              P
-            </div>
-            <div className="leading-tight">
-              <div className="text-sm font-medium tracking-tight">PopPrompt</div>
-              <div className="text-xs text-muted-foreground">
-                macOS + Windows tray prompts
-              </div>
+          <div className="leading-tight">
+            <div className="text-lg font-semibold tracking-tight">PopPrompt</div>
+            <div className="text-xs text-muted-foreground">
+              macOS + Windows tray prompts
             </div>
           </div>
 
