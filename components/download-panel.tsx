@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Download, Github } from "lucide-react";
+import { Download, GitFork } from "lucide-react";
 
 import {
   Accordion,
@@ -124,11 +124,10 @@ function DownloadTab({ platform }: { platform: Platform }) {
 }
 
 export function DownloadPanel() {
-  const [platform, setPlatform] = React.useState<Platform>("mac");
-
-  React.useEffect(() => {
-    setPlatform(detectPlatform());
-  }, []);
+  const [platform, setPlatform] = React.useState<Platform>(() => {
+    if (typeof navigator === "undefined") return "mac";
+    return detectPlatform();
+  });
 
   return (
     <Card className="border-border/60 bg-card/30 backdrop-blur supports-[backdrop-filter]:bg-card/25">
@@ -158,7 +157,7 @@ export function DownloadPanel() {
           </div>
           <Button asChild variant="secondary" className="w-full sm:w-auto">
             <a href={SOURCE_CODE_URL} target="_blank" rel="noreferrer">
-              <Github className="h-4 w-4" />
+              <GitFork className="h-4 w-4" />
               View source
             </a>
           </Button>
